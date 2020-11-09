@@ -39,3 +39,12 @@ class Main extends PluginBase implements Listener {
                                                                          foreach ($sender->getInventory()->getContents() as $index => $item) {
                                                                                   $sender->getInventory()->setItem($index, Item::get(Item::AIR));
                                                                                   $removed++;
+                                                                                       		        }
+                                                                   			 }
+                                          			 if($this->config["cleararmor"] === "on"){
+                                                                   $sender->getArmorInventory()->clearAll();
+                                                                   			 }
+                                          			 if($this->config["cleareffect"] === "on"){
+                                                                            foreach($sender->getEffects() as $effect) {
+                                                                      $sender->removeEffect($effect->getId());
+                                                                                                           	}
