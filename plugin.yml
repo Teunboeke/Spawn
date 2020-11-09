@@ -1,0 +1,9 @@
+name: Spawn
+main: Teunboeke\Spawn\Main
+version: 1.0.0
+api: [3.15.2]
+author: Teunboeke
+
+commands:
+  spawn:
+      description: "Teleport back to spawn!"
