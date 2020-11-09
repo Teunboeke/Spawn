@@ -58,3 +58,12 @@ class Main extends PluginBase implements Listener {
                                                                    		  }
                                             	      } else {
                                                             $sender->sendMessage($this->config["useingame"]);
+                                            	     }
+                                    }
+                    return true;
+                }
+          public function forceSpawn(PlayerLoginEvent $event){
+                        if ($this->config["forcespawn"] === "true")
+                               $event->getPlayer()->teleport($this->getServer()->getDefaultLevel()->getSafeSpawn());         
+                 	 }  
+      }
