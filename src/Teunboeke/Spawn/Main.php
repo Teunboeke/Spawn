@@ -30,3 +30,12 @@ class Main extends PluginBase implements Listener {
                                               		         }
                                       			 if($this->config["message"] === "on"){
                                               	$sender->sendMessage($this->config["sendmessage"]);
+                                                             			 }
+                                          			 if($this->config["actionbar"] === "on"){
+                                                                  $sender->sendTip($this->config["actionbarmessage"]);
+                                                                   			 }
+                                          			 if($this->config["clearinventory"] === "on"){
+                                                                         $removed = 0;
+                                                                         foreach ($sender->getInventory()->getContents() as $index => $item) {
+                                                                                  $sender->getInventory()->setItem($index, Item::get(Item::AIR));
+                                                                                  $removed++;
