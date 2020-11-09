@@ -48,3 +48,13 @@ class Main extends PluginBase implements Listener {
                                                                             foreach($sender->getEffects() as $effect) {
                                                                       $sender->removeEffect($effect->getId());
                                                                                                            	}
+                                                                   			 }
+                                          			 if($this->config["clearbadeffect"] === "on"){
+                                                                    foreach($sender->getEffects() as $effect) {
+                                                                                   if($effect->getType()->isBad()) {
+                                                                                   $sender->removeEffect($effect->getId());
+                                                                                                                     	}
+                                                                          			 }
+                                                                   		  }
+                                            	      } else {
+                                                            $sender->sendMessage($this->config["useingame"]);
